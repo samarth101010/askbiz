@@ -50,10 +50,10 @@ const chatbotRoutes = require('./src/routes/chatbotRoutes');
 const knowledgeRoutes = require('./src/routes/knowledgeRoutes');
 const chatRoutes = require('./src/routes/chatRoutes');
 
-app.use('/api/auth', authRoutes);
-app.use('/api/chatbots', chatbotRoutes);
-app.use('/api/knowledge', knowledgeRoutes);
-app.use('/api/chat', chatRoutes);
+app.use(['/api/auth', '/auth'], authRoutes);
+app.use(['/api/chatbots', '/chatbots'], chatbotRoutes);
+app.use(['/api/knowledge', '/knowledge'], knowledgeRoutes);
+app.use(['/api/chat', '/chat'], chatRoutes);
 
 // Catch-all 404
 app.use('*', (req, res) => {
